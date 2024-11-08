@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://bat1blia4gsn3"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_ax55c"]
+[ext_resource type="PackedScene" uid="uid://7eqxfaf0jwog" path="res://Models/i.glb" id="2_ru7ki"]
+[ext_resource type="PackedScene" uid="uid://g3mfwksekdc5" path="res://Models/l.glb" id="3_m5kce"]
+[ext_resource type="PackedScene" uid="uid://b2g2feh6yuymq" path="res://Models/o.glb" id="4_5ijcd"]
+[ext_resource type="PackedScene" uid="uid://catovgx5xcg5b" path="res://Models/s.glb" id="5_wc7sn"]
+[ext_resource type="PackedScene" uid="uid://b40isgmkv0cay" path="res://Models/t.glb" id="6_1k86r"]
+
+[sub_resource type="Environment" id="Environment_fjwc6"]
+background_mode = 1
+background_color = Color(0.999957, 0.607047, 0.548219, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_tt716"]
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_ax55c")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.443122, 1.30119)
+
+[node name="Light" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60182, 14.9979, -19.806)
+
+[node name="ModelContainer" type="Node3D" parent="."]
+
+[node name="i" parent="ModelContainer" instance=ExtResource("2_ru7ki")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.05391, 0, -5.72351)
+visible = false
+
+[node name="l" parent="ModelContainer" instance=ExtResource("3_m5kce")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, -7.55181)
+visible = false
+
+[node name="o" parent="ModelContainer" instance=ExtResource("4_5ijcd")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, -6.26959)
+visible = false
+
+[node name="s" parent="ModelContainer" instance=ExtResource("5_wc7sn")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, -9.06833)
+visible = false
+
+[node name="t" parent="ModelContainer" instance=ExtResource("6_1k86r")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, -11.7057)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fjwc6")
+camera_attributes = SubResource("CameraAttributesPractical_tt716")
